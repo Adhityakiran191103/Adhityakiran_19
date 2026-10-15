@@ -4,122 +4,203 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Adhitya Kiran's portfolio showcasing data analysis, SQL, Power BI and Python projects.">
-  <title>Adhitya Kiran | Data Analyst Portfolio</title>
+  <meta name="description" content="Adhitya Kiran Kanakaraj — Data Science Master's student at EURECOM. Explore projects in AI, machine learning, RAG, NLP and data analytics.">
+  <title>Adhitya Kiran Kanakaraj | AI & Data Science</title>
+
   <style>
     :root {
-      --bg: #0b1120;
-      --panel: #111b2e;
-      --text: #e8eef8;
-      --muted: #a5b4cc;
-      --blue: #60a5fa;
-      --border: #25334b;
+      --bg: #0a1020;
+      --surface: #111b2f;
+      --surface2: #16233a;
+      --text: #edf3ff;
+      --muted: #a7b6ce;
+      --accent: #79b8ff;
+      --accent2: #9b91ff;
+      --border: #293852;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+      font-family: Inter, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
       line-height: 1.7;
     }
 
-    a { color: var(--blue); text-decoration: none; }
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
     a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(1080px, 90%);
+      margin: auto;
+    }
 
     nav {
       position: sticky;
       top: 0;
-      background: #0b1120f5;
-      border-bottom: 1px solid var(--border);
       z-index: 10;
+      background: rgba(10, 16, 32, .94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
     }
 
     .nav-inner {
-      max-width: 1050px;
-      margin: auto;
-      padding: 16px 22px;
+      min-height: 72px;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      justify-content: space-between;
+      gap: 20px;
     }
 
-    .brand { color: white; font-size: 19px; font-weight: bold; }
-    .brand span { color: var(--blue); }
+    .brand {
+      color: var(--text);
+      font-size: 20px;
+      font-weight: 800;
+      letter-spacing: -.5px;
+    }
 
-    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
-    .nav-links a { color: var(--muted); font-size: 14px; }
+    .brand span { color: var(--accent); }
 
-    .container { max-width: 1000px; margin: auto; padding: 0 24px; }
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 14px;
+    }
 
     .hero {
-      padding: 100px 0 85px;
-      background: radial-gradient(ellipse at top right, #18345b, transparent 65%);
+      padding: 105px 0 95px;
+      background:
+        radial-gradient(ellipse at 85% 10%, #243c70 0%, transparent 42%),
+        radial-gradient(ellipse at 0% 100%, #19294a 0%, transparent 45%);
     }
 
     .eyebrow {
-      color: var(--blue);
+      color: var(--accent);
       text-transform: uppercase;
       letter-spacing: 2px;
-      font-size: 13px;
-      font-weight: bold;
+      font-size: 12px;
+      font-weight: 800;
     }
 
     h1 {
-      font-size: clamp(38px, 7vw, 64px);
-      line-height: 1.15;
-      margin: 18px 0;
-      letter-spacing: -1.5px;
+      font-size: clamp(39px, 7vw, 68px);
+      line-height: 1.12;
+      letter-spacing: -2px;
+      margin: 22px 0;
     }
 
-    h1 span { color: var(--blue); }
-
-    .hero p { max-width: 660px; color: var(--muted); font-size: 18px; }
-
-    .buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
-
-    .btn {
-      display: inline-block;
-      padding: 11px 19px;
-      border-radius: 8px;
-      background: var(--blue);
-      color: #07111f;
-      font-weight: bold;
+    h1 span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
     }
 
-    .btn-outline {
-      background: transparent;
-      color: var(--text);
-      border: 1px solid var(--border);
-    }
-
-    section { padding: 65px 0; }
-
-    .section-title { font-size: 30px; margin-bottom: 8px; }
-
-    .section-intro { color: var(--muted); margin-bottom: 28px; }
-
-    .about {
+    .hero-description {
+      max-width: 720px;
+      font-size: 18px;
       color: var(--muted);
-      max-width: 780px;
     }
 
-    .skills {
+    .buttons {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 14px;
+      margin-top: 30px;
     }
 
-    .skill {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 10px 16px;
+    .button {
+      display: inline-block;
+      padding: 12px 19px;
+      border-radius: 9px;
+      background: var(--accent);
+      color: #081426;
+      font-weight: 750;
+    }
+
+    .button.secondary {
       color: var(--text);
+      background: transparent;
+      border: 1px solid var(--border);
+    }
+
+    .button:hover {
+      text-decoration: none;
+      opacity: .88;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 55px;
+      max-width: 700px;
+    }
+
+    .stat {
+      padding: 18px;
+      background: rgba(17, 27, 47, .8);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 15px;
+      color: var(--text);
+    }
+
+    .stat span {
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    section { padding: 76px 0; }
+
+    section:nth-of-type(even) {
+      background: rgba(17, 27, 47, .28);
+    }
+
+    .section-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 38px);
+      letter-spacing: -.8px;
+      margin: 8px 0 12px;
+    }
+
+    .section-intro {
+      color: var(--muted);
+      max-width: 720px;
+      margin-bottom: 30px;
+    }
+
+    .about-text {
+      color: var(--muted);
+      max-width: 850px;
+      font-size: 16px;
     }
 
     .grid {
@@ -129,48 +210,143 @@
     }
 
     .card {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 24px;
-    }
-
-    .card h3 { font-size: 20px; margin-bottom: 10px; }
-    .card p { color: var(--muted); margin-bottom: 16px; }
-    .tag { color: var(--blue); font-size: 13px; margin-bottom: 12px; }
-
-    .contact-box {
-      background: var(--panel);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 30px;
-    }
-
-    footer {
-      border-top: 1px solid var(--border);
       padding: 25px;
-      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+    }
+
+    .card h3 {
+      font-size: 19px;
+      line-height: 1.4;
+      margin: 10px 0;
+    }
+
+    .card p {
       color: var(--muted);
       font-size: 14px;
     }
 
-    @media (max-width: 650px) {
-      .nav-inner { align-items: flex-start; flex-direction: column; }
-      .nav-links { gap: 12px; }
+    .card-meta {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 18px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 7px 12px;
+      border-radius: 7px;
+      font-size: 13px;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 18px;
+    }
+
+    .timeline-item {
+      border-left: 2px solid var(--accent);
+      padding: 4px 0 7px 22px;
+    }
+
+    .timeline-item h3 { font-size: 19px; }
+
+    .timeline-item .sub {
+      color: var(--accent);
+      font-size: 14px;
+      margin: 4px 0 9px;
+    }
+
+    .timeline-item p,
+    .timeline-item li {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .timeline-item ul {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    .publication {
+      background: linear-gradient(130deg, #172747, #111b2f);
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .contact-details {
+      display: grid;
+      gap: 12px;
+      color: var(--muted);
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 25px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    @media (max-width: 680px) {
+      .nav-inner {
+        padding: 14px 0;
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links { gap: 13px; }
       .grid { grid-template-columns: 1fr; }
-      .hero { padding: 65px 0; }
+      .stats { grid-template-columns: 1fr; }
+      .hero { padding: 70px 0; }
+      section { padding: 55px 0; }
     }
   </style>
 </head>
+
 <body>
 
   <nav>
-    <div class="nav-inner">
+    <div class="container nav-inner">
       <a class="brand" href="#home">Adhitya<span>.</span></a>
       <div class="nav-links">
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
+        <a href="#publication">Publication</a>
         <a href="#contact">Contact</a>
       </div>
     </div>
@@ -178,124 +354,330 @@
 
   <header class="hero" id="home">
     <div class="container">
-      <div class="eyebrow">Data Analytics Portfolio</div>
-      <h1>Hi, I'm Adhitya Kiran.<br>
-        I turn data into <span>insights.</span>
+      <div class="eyebrow">Artificial Intelligence · Data Science · Analytics</div>
+
+      <h1>
+        Hi, I'm Adhitya Kiran Kanakaraj.<br>
+        I build with <span>data and AI.</span>
       </h1>
-      <p>
-        BCA graduate interested in data analytics, SQL, Power BI
-        and Python. I enjoy exploring data, identifying patterns
-        and presenting information that supports better decisions.
+
+      <p class="hero-description">
+        Data Science Master's student at EURECOM with a background in
+        Artificial Intelligence and Data Science. Interested in machine
+        learning, natural language processing, retrieval-augmented
+        generation and turning data into practical insights.
       </p>
+
       <div class="buttons">
-        <a class="btn" href="#projects">Explore My Projects</a>
-        <a class="btn btn-outline"
+        <a class="button" href="#projects">Explore My Projects</a>
+        <a class="button secondary"
            href="https://github.com/Adhityakiran191103"
-           target="_blank" rel="noopener noreferrer">Visit My GitHub</a>
+           target="_blank" rel="noopener noreferrer">GitHub Profile ↗</a>
+        <a class="button secondary" href="#contact">Get in Touch</a>
+      </div>
+
+      <div class="stats">
+        <div class="stat">
+          <strong>Data Science</strong>
+          <span>Master's studies at EURECOM</span>
+        </div>
+        <div class="stat">
+          <strong>AI &amp; Machine Learning</strong>
+          <span>Projects and internships</span>
+        </div>
+        <div class="stat">
+          <strong>Research</strong>
+          <span>Conference publication</span>
+        </div>
       </div>
     </div>
   </header>
 
   <main>
+
     <section id="about">
       <div class="container">
+        <div class="section-label">Introduction</div>
         <h2 class="section-title">About Me</h2>
-        <p class="section-intro">A little about my journey.</p>
-        <p class="about">
-          I have completed my Bachelor of Computer Applications (BCA)
-          and am developing my skills in data analysis and business
-          intelligence. My interests include working with structured
-          data, writing SQL queries, building interactive dashboards
-          and communicating findings clearly. I am continuously
-          learning through practical projects and hands-on practice.
+        <p class="section-intro">My background, interests and direction.</p>
+
+        <p class="about-text">
+          I am pursuing a Master of Science in Computer Science,
+          specialising in Data Science, at EURECOM in France. I completed
+          my B.Tech in Artificial Intelligence and Data Science at
+          Panimalar Institute of Technology in India.
+
+          <br><br>
+
+          My academic and practical experience spans Python-based data
+          analysis, machine learning, deep learning, NLP and AI systems.
+          Through internships and personal and academic projects, I have
+          explored data preprocessing, exploratory data analysis,
+          resource-efficient RAG pipelines and vision-based sign language
+          translation.
+
+          <br><br>
+
+          I am interested in applying data science and AI methods to
+          practical problems, evaluating technical trade-offs and
+          developing systems that are useful, efficient and reliable.
         </p>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="container">
+        <div class="section-label">Academic Background</div>
+        <h2 class="section-title">Education</h2>
+        <p class="section-intro">
+          My academic foundation in computer science and artificial intelligence.
+        </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>Master of Science in Computer Science</h3>
+            <div class="sub">EURECOM · France · September 2025 – Present</div>
+            <p>Specialisation in Data Science.</p>
+          </div>
+
+          <div class="timeline-item">
+            <h3>B.Tech in Artificial Intelligence and Data Science</h3>
+            <div class="sub">
+              Panimalar Institute of Technology · India · October 2021 – June 2025
+            </div>
+            <p>Undergraduate degree focused on AI and Data Science.</p>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="skills">
       <div class="container">
-        <h2 class="section-title">Technical Skills</h2>
+        <div class="section-label">Technical Toolkit</div>
+        <h2 class="section-title">Skills &amp; Technologies</h2>
         <p class="section-intro">
-          Tools and technologies I work with and am developing.
+          Technologies and subject areas listed in my current résumé.
         </p>
-        <div class="skills">
-          <span class="skill">SQL</span>
-          <span class="skill">Power BI</span>
-          <span class="skill">Python</span>
-          <span class="skill">Pandas</span>
-          <span class="skill">Excel</span>
-          <span class="skill">Data Cleaning</span>
-          <span class="skill">Data Visualization</span>
-          <span class="skill">Git &amp; GitHub</span>
+
+        <div class="grid">
+          <article class="card">
+            <h3>Programming &amp; Data Analysis</h3>
+            <p>Programming, numerical computing and data preparation.</p>
+            <div class="tags">
+              <span class="tag">Python</span>
+              <span class="tag">SQL</span>
+              <span class="tag">Bash</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Pandas</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Machine Learning &amp; Deep Learning</h3>
+            <p>Libraries and frameworks for machine learning experiments.</p>
+            <div class="tags">
+              <span class="tag">PyTorch</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">Hugging Face Transformers</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>AI &amp; Natural Language Processing</h3>
+            <p>Language models, NLP methods and knowledge representations.</p>
+            <div class="tags">
+              <span class="tag">LLMs</span>
+              <span class="tag">Fine-tuning</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Knowledge Graphs</span>
+              <span class="tag">RAG</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <h3>Data Engineering &amp; Platforms</h3>
+            <p>Data workflows, databases and analytics platforms.</p>
+            <div class="tags">
+              <span class="tag">ETL Pipelines</span>
+              <span class="tag">Distributed Processing</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Data Integrity</span>
+              <span class="tag">Power BI</span>
+              <span class="tag">Tableau</span>
+              <span class="tag">Azure AZ-900</span>
+              <span class="tag">GCP</span>
+            </div>
+          </article>
         </div>
-        <p class="about" style="margin-top:18px;font-size:14px">
-          Keep only the tools you can confidently discuss in an interview.
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="container">
+        <div class="section-label">Practical Experience</div>
+        <h2 class="section-title">Internships</h2>
+        <p class="section-intro">
+          My experience contributing to AI and data science projects.
         </p>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h3>AI Intern · UNIQ Technologies</h3>
+            <div class="sub">Chennai, India · November 2024 – December 2024</div>
+            <ul>
+              <li>
+                Applied AI algorithms and performed data analysis to
+                enhance system efficiency and workflow automation.
+              </li>
+              <li>
+                Collaborated with a five-member team to build and test
+                real-world AI solutions using Python.
+              </li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h3>Data Science Intern · TRIOs Technologies</h3>
+            <div class="sub">Chennai, India · July 2023 – August 2023</div>
+            <ul>
+              <li>
+                Assisted with data preprocessing pipelines and implemented
+                foundational deep learning models under supervision.
+              </li>
+              <li>
+                Conducted exploratory data analysis using Pandas and
+                Matplotlib to extract insights for ongoing projects.
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="projects">
       <div class="container">
-        <h2 class="section-title">Featured Projects</h2>
+        <div class="section-label">Selected Work</div>
+        <h2 class="section-title">Projects</h2>
         <p class="section-intro">
-          Practical work demonstrating my analytical approach.
+          AI and data science projects described in my résumé.
         </p>
 
         <div class="grid">
           <article class="card">
-            <div class="tag">POWER BI · DATA VISUALIZATION</div>
-            <h3>Sales Performance Dashboard</h3>
+            <div class="card-meta">Python · LLMs · RAG</div>
+            <h3>Lightweight RAG Pipeline for Edge Environment</h3>
             <p>
-              An upcoming portfolio project to analyze sales,
-              revenue trends, product performance and regional results
-              through an interactive Power BI dashboard.
+              February 2026 – Present. Developed a resource-efficient
+              retrieval-augmented generation prototype to establish
+              performance baselines for edge deployments. Evaluated
+              trade-offs across chunking strategies, embedding models
+              and simulated hardware constraints.
             </p>
-            <a href="https://github.com/Adhityakiran191103"
+            <a class="card-link"
+               href="https://github.com/Adhityakiran191103"
                target="_blank" rel="noopener noreferrer">
-              GitHub profile →
+              Explore my GitHub repositories ↗
             </a>
           </article>
 
           <article class="card">
-            <div class="tag">SQL · DATA ANALYSIS</div>
-            <h3>Customer &amp; Order Analysis</h3>
+            <div class="card-meta">Computer Vision · ViT · TrOCR</div>
+            <h3>Enhanced Sign Language Translation Using Vision Transformers</h3>
             <p>
-              An upcoming SQL project to practice joins, aggregations,
-              common table expressions and window functions while
-              investigating customer and order trends.
+              Final-year project focused on a real-time, bidirectional
+              sign language translation system. Used Vision Transformers
+              for gesture extraction and TrOCR to convert movements into text.
             </p>
-            <a href="https://github.com/Adhityakiran191103"
+            <span class="card-link">Academic project</span>
+          </article>
+
+          <article class="card">
+            <div class="card-meta">Deep Learning · PyTorch</div>
+            <h3>Variational Autoencoder (AEVB)</h3>
+            <p>
+              A variational autoencoder reproduction using PyTorch and
+              MNIST, exploring latent representations and image
+              reconstruction with a two-dimensional latent space.
+            </p>
+            <a class="card-link"
+               href="https://github.com/Adhityakiran191103/AEVB_PROJECT"
                target="_blank" rel="noopener noreferrer">
-              GitHub profile →
+              View project repository ↗
             </a>
           </article>
 
           <article class="card">
-            <div class="tag">PYTHON · DATA ANALYSIS</div>
-            <h3>Exploratory Data Analysis</h3>
+            <div class="card-meta">AI Infrastructure · Research</div>
+            <h3>Decentralized AI Computing</h3>
             <p>
-              Analyze a public dataset using Python and Pandas.
-              Clean missing values, explore distributions and
-              communicate findings through charts.
+              Research on decentralized AI computing using IPFS and
+              public peer-to-peer networks, examining data security,
+              bottlenecks, scalability, cost and reliability.
             </p>
-            <a href="https://github.com/Adhityakiran191103"
-               target="_blank" rel="noopener noreferrer">
-              GitHub profile →
+            <a class="card-link" href="#publication">
+              Read publication details ↓
             </a>
+          </article>
+        </div>
+
+        <p style="color:var(--muted);font-size:13px;margin-top:22px">
+          Project links will be updated as individual public repositories
+          become available. Only the AEVB repository link above has been
+          specified directly.
+        </p>
+      </div>
+    </section>
+
+    <section id="publication">
+      <div class="container">
+        <div class="section-label">Research</div>
+        <h2 class="section-title">Publication</h2>
+
+        <article class="card publication">
+          <div class="card-meta">March 2024 · ICONIC Conference</div>
+          <h3>Decentralizing AI Computing: A Study with IPFS and Public P2P Networks</h3>
+          <p>
+            Conference publication associated with PEC in collaboration
+            with IEEE, Chennai, India. The work explored a decentralized
+            AI framework using peer-to-peer nodes and IPFS to improve
+            data security and reduce central bottlenecks.
+          </p>
+          <p style="margin-top:12px">
+            The résumé describes experimental comparisons of decentralized
+            and centralized architectures in terms of performance,
+            scalability, cost and reliability.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section id="certifications">
+      <div class="container">
+        <div class="section-label">Professional Development</div>
+        <h2 class="section-title">Certifications</h2>
+        <p class="section-intro">
+          Certifications listed in my current résumé.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <h3>DELF A2</h3>
+            <p>June 2025</p>
           </article>
 
           <article class="card">
-            <div class="tag">MACHINE LEARNING · PYTORCH</div>
-            <h3>Variational Autoencoder</h3>
-            <p>
-              A machine learning project exploring a variational
-              autoencoder trained on MNIST handwritten digit images.
-              Add the repository link and results after verifying them.
-            </p>
-            <a href="https://github.com/Adhityakiran191103/AEVB_PROJECT"
-               target="_blank" rel="noopener noreferrer">
-              View project repository →
-            </a>
+            <h3>IBM SkillsBuild Cloud Fundamentals</h3>
+            <p>April 2024</p>
+          </article>
+
+          <article class="card">
+            <h3>Nasscom Cyber Security and Design</h3>
+            <p>June 2024</p>
+          </article>
+
+          <article class="card">
+            <h3>Cisco Networking Essentials</h3>
+            <p>June 2024</p>
           </article>
         </div>
       </div>
@@ -303,39 +685,49 @@
 
     <section id="contact">
       <div class="container">
+        <div class="section-label">Get in Touch</div>
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="section-intro">
+          Open to connecting with people working in data science,
+          artificial intelligence and analytics.
+        </p>
+
         <div class="contact-box">
-          <h2 class="section-title">Let's Connect</h2>
-          <p class="section-intro">
-            I'm interested in learning, collaborating and exploring
-            opportunities in data analytics.
-          </p>
-          <p>
-            GitHub:
-            <a href="https://github.com/Adhityakiran191103"
-               target="_blank" rel="noopener noreferrer">
-              github.com/Adhityakiran191103
-            </a>
-          </p>
-          <p style="margin-top:10px">
-            LinkedIn:
-            <a href="https://www.linkedin.com/"
-               target="_blank" rel="noopener noreferrer">
-              Add your LinkedIn profile URL
-            </a>
-          </p>
-          <p style="margin-top:10px;color:var(--muted)">
-            Add your professional email and résumé link once they are ready.
-          </p>
+          <div class="contact-details">
+            <p><strong>Name:</strong> Adhitya Kiran Kanakaraj</p>
+            <p><strong>Location:</strong> Nice, France</p>
+            <p>
+              <strong>Email:</strong>
+              <a href="mailto:adhityakiran10@gmail.com">
+                adhityakiran10@gmail.com
+              </a>
+            </p>
+            <p>
+              <strong>Phone:</strong>
+              <a href="tel:+33746370930">+33 7 46 37 09 30</a>
+            </p>
+            <p>
+              <strong>GitHub:</strong>
+              <a href="https://github.com/Adhityakiran191103"
+                 target="_blank" rel="noopener noreferrer">
+                github.com/Adhityakiran191103
+              </a>
+            </p>
+            <p>
+              <strong>LinkedIn:</strong>
+              Add your direct LinkedIn profile URL here.
+            </p>
+          </div>
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
-    <p>© 2026 Adhitya Kiran · Data Analytics Portfolio</p>
-    <p>Built with HTML and CSS · Hosted on GitHub Pages</p>
+    <p>© 2026 Adhitya Kiran Kanakaraj</p>
+    <p>AI · Data Science · Machine Learning · Analytics</p>
   </footer>
 
 </body>
 </html>
-
