@@ -43,12 +43,17 @@ header {
   border-bottom: 1px solid var(--line);
 }
 
+
 .nav {
-  min-height: 76px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 24px;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.resume-btn {
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .logo { font-size: 21px; font-weight: 800; letter-spacing: -1px; }
@@ -295,9 +300,11 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted)
 
 <body>
 
+
 <header>
   <div class="wrap nav">
     <a class="logo" href="#home">Adhitya Kiran<span>.</span></a>
+
     <nav aria-label="Main navigation">
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -305,8 +312,13 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted)
       <a href="#experience">Experience</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <a class="btn resume-btn" href="resume.pdf" download>
+      Download Resume ↓
+    </a>
   </div>
 </header>
+
 
 <main>
 
