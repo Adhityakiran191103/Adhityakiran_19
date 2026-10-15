@@ -343,6 +343,66 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted)
     max-width: 260px;
   }
 }
+
+/* Reduce hero section size */
+.hero {
+  padding-top: 45px;
+  padding-bottom: 45px;
+  grid-template-columns: minmax(0, 1.35fr) minmax(200px, 0.65fr);
+  gap: 40px;
+}
+
+.hero h1 {
+  font-size: clamp(38px, 4.2vw, 58px);
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+  margin-top: 18px;
+  margin-bottom: 20px;
+}
+
+.hero .intro {
+  font-size: 16px;
+  line-height: 1.65;
+  max-width: 650px;
+}
+
+.hero .eyebrow {
+  font-size: 12px;
+}
+
+.hero .hero-foot {
+  margin-top: 25px;
+}
+
+/* Make profile photo circular */
+.hero-photo img {
+  width: 100%;
+  max-width: 300px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+}
+
+/* Responsive layout */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+
+  .hero h1 {
+    font-size: clamp(34px, 8vw, 46px);
+    line-height: 1.12;
+    letter-spacing: -1px;
+  }
+
+  .hero-photo img {
+    max-width: 220px;
+  }
+}
   
 </style>
 </head>
