@@ -1,1 +1,341 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Adhitya Kiran's portfolio showcasing data analysis, SQL, Power BI and Python projects.">
+  <title>Adhitya Kiran | Data Analyst Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1120;
+      --panel: #111b2e;
+      --text: #e8eef8;
+      --muted: #a5b4cc;
+      --blue: #60a5fa;
+      --border: #25334b;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a { color: var(--blue); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      background: #0b1120f5;
+      border-bottom: 1px solid var(--border);
+      z-index: 10;
+    }
+
+    .nav-inner {
+      max-width: 1050px;
+      margin: auto;
+      padding: 16px 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand { color: white; font-size: 19px; font-weight: bold; }
+    .brand span { color: var(--blue); }
+
+    .nav-links { display: flex; gap: 18px; flex-wrap: wrap; }
+    .nav-links a { color: var(--muted); font-size: 14px; }
+
+    .container { max-width: 1000px; margin: auto; padding: 0 24px; }
+
+    .hero {
+      padding: 100px 0 85px;
+      background: radial-gradient(ellipse at top right, #18345b, transparent 65%);
+    }
+
+    .eyebrow {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-size: clamp(38px, 7vw, 64px);
+      line-height: 1.15;
+      margin: 18px 0;
+      letter-spacing: -1.5px;
+    }
+
+    h1 span { color: var(--blue); }
+
+    .hero p { max-width: 660px; color: var(--muted); font-size: 18px; }
+
+    .buttons { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+
+    .btn {
+      display: inline-block;
+      padding: 11px 19px;
+      border-radius: 8px;
+      background: var(--blue);
+      color: #07111f;
+      font-weight: bold;
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    section { padding: 65px 0; }
+
+    .section-title { font-size: 30px; margin-bottom: 8px; }
+
+    .section-intro { color: var(--muted); margin-bottom: 28px; }
+
+    .about {
+      color: var(--muted);
+      max-width: 780px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .skill {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 16px;
+      color: var(--text);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+    }
+
+    .card h3 { font-size: 20px; margin-bottom: 10px; }
+    .card p { color: var(--muted); margin-bottom: 16px; }
+    .tag { color: var(--blue); font-size: 13px; margin-bottom: 12px; }
+
+    .contact-box {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+    }
+
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 25px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    @media (max-width: 650px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 12px; }
+      .grid { grid-template-columns: 1fr; }
+      .hero { padding: 65px 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#home">Adhitya<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="eyebrow">Data Analytics Portfolio</div>
+      <h1>Hi, I'm Adhitya Kiran.<br>
+        I turn data into <span>insights.</span>
+      </h1>
+      <p>
+        BCA graduate interested in data analytics, SQL, Power BI
+        and Python. I enjoy exploring data, identifying patterns
+        and presenting information that supports better decisions.
+      </p>
+      <div class="buttons">
+        <a class="btn" href="#projects">Explore My Projects</a>
+        <a class="btn btn-outline"
+           href="https://github.com/Adhityakiran191103"
+           target="_blank" rel="noopener noreferrer">Visit My GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-intro">A little about my journey.</p>
+        <p class="about">
+          I have completed my Bachelor of Computer Applications (BCA)
+          and am developing my skills in data analysis and business
+          intelligence. My interests include working with structured
+          data, writing SQL queries, building interactive dashboards
+          and communicating findings clearly. I am continuously
+          learning through practical projects and hands-on practice.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title">Technical Skills</h2>
+        <p class="section-intro">
+          Tools and technologies I work with and am developing.
+        </p>
+        <div class="skills">
+          <span class="skill">SQL</span>
+          <span class="skill">Power BI</span>
+          <span class="skill">Python</span>
+          <span class="skill">Pandas</span>
+          <span class="skill">Excel</span>
+          <span class="skill">Data Cleaning</span>
+          <span class="skill">Data Visualization</span>
+          <span class="skill">Git &amp; GitHub</span>
+        </div>
+        <p class="about" style="margin-top:18px;font-size:14px">
+          Keep only the tools you can confidently discuss in an interview.
+        </p>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-intro">
+          Practical work demonstrating my analytical approach.
+        </p>
+
+        <div class="grid">
+          <article class="card">
+            <div class="tag">POWER BI · DATA VISUALIZATION</div>
+            <h3>Sales Performance Dashboard</h3>
+            <p>
+              An upcoming portfolio project to analyze sales,
+              revenue trends, product performance and regional results
+              through an interactive Power BI dashboard.
+            </p>
+            <a href="https://github.com/Adhityakiran191103"
+               target="_blank" rel="noopener noreferrer">
+              GitHub profile →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="tag">SQL · DATA ANALYSIS</div>
+            <h3>Customer &amp; Order Analysis</h3>
+            <p>
+              An upcoming SQL project to practice joins, aggregations,
+              common table expressions and window functions while
+              investigating customer and order trends.
+            </p>
+            <a href="https://github.com/Adhityakiran191103"
+               target="_blank" rel="noopener noreferrer">
+              GitHub profile →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="tag">PYTHON · DATA ANALYSIS</div>
+            <h3>Exploratory Data Analysis</h3>
+            <p>
+              Analyze a public dataset using Python and Pandas.
+              Clean missing values, explore distributions and
+              communicate findings through charts.
+            </p>
+            <a href="https://github.com/Adhityakiran191103"
+               target="_blank" rel="noopener noreferrer">
+              GitHub profile →
+            </a>
+          </article>
+
+          <article class="card">
+            <div class="tag">MACHINE LEARNING · PYTORCH</div>
+            <h3>Variational Autoencoder</h3>
+            <p>
+              A machine learning project exploring a variational
+              autoencoder trained on MNIST handwritten digit images.
+              Add the repository link and results after verifying them.
+            </p>
+            <a href="https://github.com/Adhityakiran191103/AEVB_PROJECT"
+               target="_blank" rel="noopener noreferrer">
+              View project repository →
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="contact-box">
+          <h2 class="section-title">Let's Connect</h2>
+          <p class="section-intro">
+            I'm interested in learning, collaborating and exploring
+            opportunities in data analytics.
+          </p>
+          <p>
+            GitHub:
+            <a href="https://github.com/Adhityakiran191103"
+               target="_blank" rel="noopener noreferrer">
+              github.com/Adhityakiran191103
+            </a>
+          </p>
+          <p style="margin-top:10px">
+            LinkedIn:
+            <a href="https://www.linkedin.com/"
+               target="_blank" rel="noopener noreferrer">
+              Add your LinkedIn profile URL
+            </a>
+          </p>
+          <p style="margin-top:10px;color:var(--muted)">
+            Add your professional email and résumé link once they are ready.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Adhitya Kiran · Data Analytics Portfolio</p>
+    <p>Built with HTML and CSS · Hosted on GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
+
