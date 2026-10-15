@@ -294,6 +294,55 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted)
 #skills > .wrap > .section-head .number {
   margin-bottom: 12px;
 }
+
+
+/* Hero section with profile photo */
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(220px, 0.8fr);
+  align-items: center;
+  gap: 48px;
+}
+
+.hero-content {
+  min-width: 0;
+}
+
+.hero-photo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-photo img {
+  display: block;
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px;
+}
+
+/* Responsive layout for phones and tablets */
+@media (max-width: 700px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .hero-content {
+    order: 1;
+  }
+
+  .hero-photo {
+    order: 2;
+  }
+
+  .hero-photo img {
+    max-width: 260px;
+  }
+}
   
 </style>
 </head>
@@ -322,21 +371,40 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: var(--muted)
 
 <main>
 
+
 <div class="wrap hero" id="home">
-  <div class="eyebrow">AI · Data Science · Machine Learnin ·RAG·Language model </div>
+  <div class="hero-content">
+    <div class="eyebrow">
+      AI · Data Science · Machine Learning
+    </div>
 
-  <h1>
-    Adhitya Kiran<br>
-    Solving real-world problems through <em>data and AI.</em>
-  </h1>
+    <h1>
+      Adhitya Kiran<br>
+      Solving real-world problems through
+      <em>data and AI.</em>
+    </h1>
 
-  <p class="intro">
-    I am currently looking for an internship in Data Science,
-    Artificial Intelligence, Machine Learning, or Data Analytics,
-    where I can apply my technical knowledge to real-world challenges,
-    learn from experienced professionals, and contribute to meaningful
-    projects.
-  </p>
+    <p class="intro">
+      I am currently looking for an internship in Data Science,
+      Artificial Intelligence, Machine Learning, or Data Analytics,
+      where I can apply my technical knowledge to real-world challenges,
+      learn from experienced professionals, and contribute to meaningful
+      projects.
+    </p>
+
+    <div class="hero-foot">
+      <span>Computer Science · Data Science</span>
+    </div>
+  </div>
+
+  <div class="hero-photo">
+    <img
+      src="profile.jpg"
+      alt="Adhitya Kiran - profile photo"
+    >
+  </div>
+</div>
+
 
 
   <section id="about">
